@@ -59,8 +59,8 @@ radio.onReceivedBuffer((recievedBuffer: Buffer) => {
     const unpackedPixel: place.pixel = place.unpackPixel(recievedBuffer);
 
     if (unpackedPixel.state === "on") {
-        led.plot(unpackedPixel.x, unpackedPixel.y)
+        led.plot(unpackedPixel.x, unpackedPixel.y);
     } else {
-        led.unplot(unpackedPixel.x, unpackedPixel.y)
+        led.unplot(unpackedPixel.x, unpackedPixel.y);
     }
 });
