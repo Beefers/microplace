@@ -11,9 +11,7 @@
         "README.md",
         "place.ts"
     ],
-    "testFiles": [
-        "test.ts"
-    ],
+    "testFiles": [],
     "targetVersions": {
         "branch": "v4.0.18",
         "tag": "v4.0.18",

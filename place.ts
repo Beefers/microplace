@@ -2,7 +2,7 @@
  * The library that powers micro:place
 */
 namespace place {
-    export type ledLimit = 1 | 2 | 3 | 4 | 5;
+    export type ledLimit = 0 | 1 | 2 | 3 | 4;
 
     export interface pixel {
         x: ledLimit;
@@ -27,7 +27,7 @@ namespace place {
 
         let pixelState: "on" | "off";
 
-        if (unpackedArray[3] === 1) {
+        if (unpackedArray[2] === 1) {
             pixelState = "on";
         } else {
             pixelState = "off";
@@ -38,5 +38,13 @@ namespace place {
             y: unpackedArray[1],
             state: pixelState
         } as pixel;
+    }
+
+    export function showPixel(pixelData: pixel) {
+        if (pixelData.state === "on") {
+            led.plot(pixelData.x, pixelData.y)
+        } else {
+            led.unplot(pixelData.x, pixelData.y)
+        }
     }
 }
